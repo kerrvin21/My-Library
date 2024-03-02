@@ -7,15 +7,13 @@
 
 <div class="container">
     <ul>
-
+        <% authors.map(author=>{ %>
+            <li>
+                <%= author.name %>
+                    <a href="/authors/<%=author.id%>">View</a>
+                    <a href="/authors/<%=author.id%>">Edit</a>
+                    <a href="/authors/<%=author.id%>">Delete</a>
+            </li>
+            <% }) %>
     </ul>
 </div>
-
-<% authors.map(author=>{ %>
-    <li>
-        <%= author.name %>
-            <a href="/authors/<%=author.id%>">View</a>
-            <a href="/authors/<%=author.id%>">Edit</a>
-            <a href="/authors/<%=author.id%>">Delete</a>
-    </li>
-    <% }) %>

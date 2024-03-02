@@ -1,0 +1,38 @@
+<div class="form_field">
+    <label for="title">Title</label>
+    <input type="text" name="title" value="<%= book.title %>">
+</div>
+<div class="form_field">
+    <label for="author">Author</label>
+    <select name="author">
+        <% authors.map(author=> {%>
+            <% if(author._id===book.author){ %>
+                <option value="<%= author._id%>" selected>
+                    <%= author.name%>
+                </option>
+                <% }else{ %>
+                    <option value="<%= author._id%>">
+                        <%= author.name%>
+                    </option>
+                    <%}})%>
+    </select>
+</div>
+<div class="form_field">
+    <label for="publishDate">Publish Date</label>
+    <input type="date" name="publishDate" value="<%= book.publishDate == null ? '' 
+        : book.publishDate.toISOString().split('T')[0] %>">
+</div>
+<div class="form_field">
+    <label for="pageCount">Page Count</label>
+    <input type="number" name="pageCount" value="<%= book.pageCount %>">
+</div>
+
+<div class="form_field">
+    <label for="coverImageName">Cover</label>
+    <input type="file" name="coverImageName" />
+</div>
+
+<div class="form_field">
+    <label for="description">Description</label>
+    <textarea name="description"><%= book.description%></textarea>
+</div>
