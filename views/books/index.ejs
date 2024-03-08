@@ -18,16 +18,4 @@
     </div>
 </form>
 
-<div class="container">
-    <ul>
-        <% books.map(book=>{%>
-            <li>
-                <p>
-                    <%= book.title + ' - ' + book.publishDate%>
-                </p>
-                <img src="<%= book.coverImagePath%>" height="150" width="100">
-
-            </li>
-            <%}) %>
-    </ul>
-</div>
+<%- include('./_cards_views')%>

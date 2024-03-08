@@ -1,20 +1,2 @@
 <h2>Recently Added</h2>
-
-<div>
-    <ul>
-        <% books.map(book=>{%>
-            <card height='150' width="100">
-                <img src="<%= book.coverImagePath%>" height="100" width="100" z-index="0">
-                <div class="info" z-index="2">
-                    <p class="title">
-                        <%=book.title%>
-                    </p>
-                    <p class="description">
-                        <%=book.description%>
-                    </p>
-                </div>
-            </card>
-
-            <%}) %>
-    </ul>
-</div>
+<%- include('books/_cards_views')%>

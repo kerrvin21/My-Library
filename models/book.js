@@ -17,7 +17,7 @@ const schema = new mongoose.Schema({
     },
     pageCount: {
         type: Number,
-        require: true,
+        required: true,
         min: 1
     },
     createdAt: {

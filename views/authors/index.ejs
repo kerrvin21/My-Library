@@ -11,8 +11,8 @@
             <li>
                 <%= author.name %>
                     <a href="/authors/<%=author.id%>">View</a>
-                    <a href="/authors/<%=author.id%>">Edit</a>
-                    <a href="/authors/<%=author.id%>">Delete</a>
+                    <a href="/authors/edit/<%=author.id%>">Edit</a>
+                    <%- include('../partials/_delete_file',{action_link:`/authors/${author.id}?_method=DELETE`})%>
             </li>
             <% }) %>
     </ul>

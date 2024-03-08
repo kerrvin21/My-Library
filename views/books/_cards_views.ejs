@@ -1,0 +1,17 @@
+<div class="container">
+    <% books.map(book=>{%>
+        <card width="100" height="150" overflow="hidden">
+            <a href="/books/<%= book._id%>">
+                <img src="<%= book.coverImagePath%>" alt="book image" width="100" height="100">
+            </a>
+            <div class="transactions">
+                <a href="/books/<%= book.id%>">view</a>
+                <a href="/books/edit/<%= book.id%>">edit</a>
+                <form action="/books/<%= book.id%>?_method=DELETE" method="POST">
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+        </card>
+        <%}) %>
+
+</div>
